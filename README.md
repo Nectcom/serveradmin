@@ -23,8 +23,9 @@ Ruby on Railsで構成されており、LDAPでユーザー管理を行ってい
 | objectCass | posixAccount |
 | objectCass | shadowAccount |
 | c | JP |
-| o | GNCTRC |
-| ou | 設計 or 加工 or 電気 |
+| dc | GNCT |
+| dc | RobotClub |
+| ou | 設計(design) or 加工(machining) or 電気(electoric) |
 | cn | 名前 |
 | sn | 氏名 |
 | mail | mail address |
