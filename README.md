@@ -18,14 +18,15 @@ Ruby on Railsで構成されており、LDAPでユーザー管理を行ってい
 
 ### LDAP命名規則
 * posixAccountを使用する
+
 | Field | Value |
 |-------|-------|
 | objectCass | posixAccount |
 | objectCass | shadowAccount |
 | c | JP |
 | dc | GNCT |
-| dc | RobotClub |
-| ou | 設計(design) or 加工(machining) or 電気(electoric) |
+| dc | robot\_Club |
+| ou | 設計(design) or 加工(machining) or 電気(electroics) |
 | cn | 名前 |
 | sn | 氏名 |
 | mail | mail address |

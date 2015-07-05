@@ -1,0 +1,55 @@
+include /etc/openldap/schema/core.schema
+include /etc/openldap/schema/cosine.schema
+include /etc/openldap/schema/inetorgperson.schema
+include /etc/openldap/schema/collective.schema
+include /etc/openldap/schema/duaconf.schema
+include /etc/openldap/schema/dyngroup.schema
+include /etc/openldap/schema/corba.schema
+include /etc/openldap/schema/java.schema
+include /etc/openldap/schema/misc.schema
+include /etc/openldap/schema/nis.schema
+include /etc/openldap/schema/openldap.schema
+include /etc/openldap/schema/pmi.schema
+include /etc/openldap/schema/ppolicy.schema
+include /etc/openldap/schema/sudo.schema
+
+database  bdb
+directory /var/lib/ldap
+suffix  "dc=robot_club,dc=GNCT"
+rootdn  "cn=leader,dc=robot_club,dc=GNCT"
+rootpw  {SSHA}0UR0yMKc683jOc9q7xuyW16zPVr0kCja
+
+pidfile /var/run/openldap/slapd.pid
+argsfile  /var/run/openldap/slapd.args
+
+# access制限 parameters
+# よく意味がわからない
+# /etc/openldap/slapd.d/cn\=config/olcDatabase\=\{1\}dbd.ldif ファイル内にアクセスしているっぽい
+
+# BDB backend serverに暗黙のSASLセキリュティを経由してrootアクセスする
+access to * by dn.base="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" manage
+
+# 認証のためにuserPasswordにアクセスする
+access to attrs=userPassword by self write by * auth
+
+# OK.search, NO.read
+access to dn.base=dc=GNCT by * search by * none
+
+# これから下は
+# /etc/openldap/slapd.d/cn~~~~~~~~~~~~~~~~~~~~~~{2}dbd.ldifファイルの中に書かれるよ
+database monitor
+
+# monitor backend coonfigre
+access to * by dn.base="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" manage
+  by dn.base="cn=leader,dc=robot_club,dc=GNCT" manage
+  by * none
+
+# Configure the config backend.
+# これ以降は {0}dbd.ldifへ書かれるよ
+database config
+
+access to * by dn.base="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" manage
+  by dn.base="cn=leader,dc=robot_club,dc=GNCT" manage
+  by * none
+
+# EOF

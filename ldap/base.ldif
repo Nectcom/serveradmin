@@ -1,0 +1,21 @@
+# Auther nect
+# base.ldif
+# add base entry
+
+dn: dc=robot_club,dc=GNCT
+objectClass: dcObject
+objectClass: organization
+dc: robot_club
+o: jp
+
+dn: ou=design,dc=robot_club,dc=GNCT
+objectClass: organizationalUnit
+ou: design
+
+dn: ou=machining,dc=robot_club,dc=GNCT
+objectClass: organizationalUnit
+ou: machining
+
+dn: ou=electronics,dc=robot_club,dc=GNCT
+objectClass: organizationalUnit
+ou: electronics

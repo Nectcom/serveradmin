@@ -1,0 +1,14 @@
+# Auther nect
+# add user list
+
+dn: uid=taku.kouketsu,ou=electronics,dc=robot_club,dc=GNCT
+objectClass: shadowAccount
+objectClass: posixAccount
+objectClass: account
+cn: Taku Kouketsu
+uid: taku.kouketsu
+uidNumber: 2001
+gidNumber: 2000
+homeDirectory: /home/taku
+loginShell: /bin/bash
+userPassword: {SSHA}eui2TDim24XymdkBTAB272LtMGgBunzv
