@@ -1,0 +1,42 @@
+dn: olcDatabase={1}hdb,cn=config
+changetype: modify
+delete: olcAccess
+
+dn: olcDatabase={1}hdb,cn=config
+changetype: modify
+
+# user entry can be read only self.
+add: olcAccess
+olcAccess: {0}to dn.regex=".*,dc=robot_club,dc=GNCT"
+  by self read
+  by dn="cn=leader,dc=robot_club,dc=GNCT" write
+  by * auth
+
+# Password can be changed only admin or self.
+-
+add: olcAccess
+olcAccess: {0}to attrs=userPassword
+  by self write
+  by dn="cn=leader,dc=robot_club,dc=GNCT" write
+  by anonymous auth
+  by * none
+
+# shell login is disabled.
+-
+add: olcAccess
+olcAccess: {0}to attrs=homeDirectory,loginShell
+  by self read
+  by dn="cn=leader,dc=robot_club,dc=GNCT" write
+  by * none
+
+-
+add: olcAccess
+olcAccess: {1}to dn,base=""
+  by * read
+
+-
+add: olcAccess
+olcAccess: {2}to *
+  by self read
+  by dn="cn=leader,dc=robot_club,dc=GNCT" write
+  by * read
