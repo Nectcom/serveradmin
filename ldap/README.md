@@ -22,6 +22,6 @@ sudo systemctl enable slapd
 
 #### Tree
 
-GNCT --- robot\_club --- elec
-                      |- design
-                      |- process
+GNCT --- robot\_club --- elec<br>
+                      |- design<br>
+                      |- process<br>
