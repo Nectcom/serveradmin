@@ -1,25 +1,27 @@
 # Auther nect
 # add user list
 
-dn: uid=taku.kouketsu,ou=electronics,dc=robot_club,dc=GNCT
-objectClass: shadowAccount
-objectClass: posixAccount
-objectClass: inetOrgPerson
-sn: Kouketsu
-cn: Taku 
-uid: taku.kouketsu
-uidNumber: 2001
-gidNumber: 2000
-homeDirectory: /home/taku
-loginShell: /bin/bash
-userPassword: {SSHA}eui2TDim24XymdkBTAB272LtMGgBunzv
-
-
+# dn: uid=taku.kouketsu,ou=electronics,dc=robot_club,dc=GNCT
+# objectClass: top
+# objectClass: shadowAccount
+# objectClass: posixAccount
+# objectClass: inetOrgPerson
+# sn: Kouketsu
+# cn: Taku 
+# uid: taku.kouketsu
+# uidNumber: 2001
+# gidNumber: 2000
+# homeDirectory: /home/taku
+# loginShell: /bin/bash
+# userPassword: {SSHA}eui2TDim24XymdkBTAB272LtMGgBunzv
+# 
 # dn: uid=fumiya.tsukahara,ou=electronics,dc=robot_club,dc=GNCT
 # objectClass: shadowAccount
 # objectClass: posixAccount
-# objectClass: account
-# cn: fumiya.tsukahara
+# objectClass: top
+# objectClass: inetOrgPerson
+# cn: fumiya
+# sn: tsukahara
 # uid: fumiya.tsukahara
 # uidNumber: 2001
 # gidNumber: 2000
@@ -30,12 +32,18 @@ userPassword: {SSHA}eui2TDim24XymdkBTAB272LtMGgBunzv
 # dn: uid=hiromasa.horie,ou=electronics,dc=robot_club,dc=GNCT
 # objectClass: shadowAccount
 # objectClass: posixAccount
-# objectClass: account
-# cn: hiromasa.horie
+# objectClass: inetOrgPerson
+# objectClass: top
+# cn: hiromasa
+# sn: horie
 # uid: hiromasa.horie
 # uidNumber: 2001
 # gidNumber: 2000
 # homeDirectory: /home/taku
 # loginShell: /bin/bash
 # userPassword: {SSHA}eui2TDim24XymdkBTAB272LtMGgBunzv
-# 
+dn: cn=auth-reader,dc=robot_club,dc=GNCT
+objectClass: person
+sn: auth
+cn: reader
+userPassword: {SSHA}Vk8f8DYcfYER2Ip/3jj0FPTkiD5KPHbK

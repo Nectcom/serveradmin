@@ -19,3 +19,15 @@ ou: machining
 dn: ou=electronics,dc=robot_club,dc=GNCT
 objectClass: organizationalUnit
 ou: electronics
+
+dn: ou=2011,dc=robot_club,dc=GNCT
+objectClass: organizationalUnit
+ou: 2011
+
+dn: ou=2012,dc=robot_club,dc=GNCT
+objectClass: organizationalUnit
+ou: 2012
+
+dn: ou=2013,dc=robot_club,dc=GNCT
+objectClass: organizationalUnit
+ou: 2013

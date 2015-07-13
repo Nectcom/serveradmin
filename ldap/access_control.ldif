@@ -1,42 +1,26 @@
-dn: olcDatabase={1}hdb,cn=config
+dn: olcDatabase={2}hdb,cn=config
 changetype: modify
-delete: olcAccess
-
-dn: olcDatabase={1}hdb,cn=config
-changetype: modify
-
-# user entry can be read only self.
-add: olcAccess
-olcAccess: {0}to dn.regex=".*,dc=robot_club,dc=GNCT"
-  by self read
-  by dn="cn=leader,dc=robot_club,dc=GNCT" write
-  by * auth
-
-# Password can be changed only admin or self.
--
-add: olcAccess
+replace: olcAccess
+# read only self and auth-reader user.
 olcAccess: {0}to attrs=userPassword
   by self write
-  by dn="cn=leader,dc=robot_club,dc=GNCT" write
-  by anonymous auth
+  by * auth
+olcAccess: {1}to attrs=loginShell,homeDirectory
   by * none
-
-# shell login is disabled.
--
-add: olcAccess
-olcAccess: {0}to attrs=homeDirectory,loginShell
+olcAccess: {2}to attrs=shadowLastChange
   by self read
-  by dn="cn=leader,dc=robot_club,dc=GNCT" write
   by * none
+olcAccess: {3}to dn.regex=".*,ou=.*,dc=robot_club,dc=GNCT" attrs=sn,cn,mail,uid,uidNumber,gidNumber
+  by self write
+  by dn="cn=auth-reader,dc=robot_club,dc=GNCT" none
+olcAccess: {4}to attrs=mail,description
+  by self write
+  by users read
+  by dn="cn=auth-reader,dc=robot_club,dc=GNCT" none
+  by * none
+olcAccess: {5}to dn.regex=".*,ou=.*,dc=robot_club,dc=GNCT"
+  by self write
+  by dn="cn=manager,dc=robot_club,dc=GNCT" write
+  by dn="cn=auth-reader,dc=robot_club,dc=GNCT" read
+  by * auth
 
--
-add: olcAccess
-olcAccess: {1}to dn,base=""
-  by * read
-
--
-add: olcAccess
-olcAccess: {2}to *
-  by self read
-  by dn="cn=leader,dc=robot_club,dc=GNCT" write
-  by * read

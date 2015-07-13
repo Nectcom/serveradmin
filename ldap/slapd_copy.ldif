@@ -124,11 +124,10 @@ olcAccess: to *
 #
 # rootdn can always read and write EVERYTHING!
 #
-olcAccess: to * attrs=userPassword
-  by self write
-  by anonymous auth
-  by users none
-  by * none
+#olcAccess: to attrs=userPassword
+#  by self write
+#  by anonymous auth
+#  by * none
 
 #olcAccess: to * attrs=mail
 #  by self write
@@ -170,6 +169,7 @@ objectClass: olcHdbConfig
 olcDatabase: hdb
 olcSuffix: dc=robot_club,dc=GNCT
 olcRootDN: cn=manager,dc=robot_club,dc=GNCT
+# lbwh6840
 olcRootPW: {SSHA}isw53poPnTyPrqYOb8bPbtH1QeF1w8Fm
 olcDbDirectory:	/var/lib/ldap
 olcDbIndex: objectClass eq,pres
