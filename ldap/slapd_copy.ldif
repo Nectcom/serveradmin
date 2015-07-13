@@ -35,41 +35,41 @@ olcPidFile: /var/run/openldap/slapd.pid
 # - dyngroup.la and dynlist.la cannot be used at the same time
 #
 
-# dn: cn=module,cn=config
-# objectClass: olcModuleList
-# cn: module
+dn: cn=module,cn=config
+objectClass: olcModuleList
+cn: module
 # olcModulepath:	/usr/lib/openldap
-# olcModulepath:	/usr/lib64/openldap
-# olcModuleload: accesslog.la
-# olcModuleload: auditlog.la
-# olcModuleload: back_dnssrv.la
-# olcModuleload: back_ldap.la
-# olcModuleload: back_mdb.la
-# olcModuleload: back_meta.la
-# olcModuleload: back_null.la
-# olcModuleload: back_passwd.la
-# olcModuleload: back_relay.la
-# olcModuleload: back_shell.la
-# olcModuleload: back_sock.la
-# olcModuleload: collect.la
-# olcModuleload: constraint.la
-# olcModuleload: dds.la
-# olcModuleload: deref.la
+olcModulepath:	/usr/lib64/openldap
+olcModuleload: accesslog.la
+olcModuleload: auditlog.la
+olcModuleload: back_dnssrv.la
+olcModuleload: back_ldap.la
+olcModuleload: back_mdb.la
+olcModuleload: back_meta.la
+olcModuleload: back_null.la
+olcModuleload: back_passwd.la
+olcModuleload: back_relay.la
+olcModuleload: back_shell.la
+olcModuleload: back_sock.la
+olcModuleload: collect.la
+olcModuleload: constraint.la
+olcModuleload: dds.la
+olcModuleload: deref.la
 # olcModuleload: dyngroup.la
-# olcModuleload: dynlist.la
-# olcModuleload: memberof.la
-# olcModuleload: pcache.la
-# olcModuleload: ppolicy.la
-# olcModuleload: refint.la
-# olcModuleload: retcode.la
-# olcModuleload: rwm.la
-# olcModuleload: seqmod.la
-# olcModuleload: smbk5pwd.la
-# olcModuleload: sssvlv.la
-# olcModuleload: syncprov.la
-# olcModuleload: translucent.la
-# olcModuleload: unique.la
-# olcModuleload: valsort.la
+olcModuleload: dynlist.la
+olcModuleload: memberof.la
+olcModuleload: pcache.la
+olcModuleload: ppolicy.la
+olcModuleload: refint.la
+olcModuleload: retcode.la
+olcModuleload: rwm.la
+olcModuleload: seqmod.la
+olcModuleload: smbk5pwd.la
+olcModuleload: sssvlv.la
+olcModuleload: syncprov.la
+olcModuleload: translucent.la
+olcModuleload: unique.la
+olcModuleload: valsort.la
 
 
 #
@@ -124,22 +124,22 @@ olcAccess: to *
 #
 # rootdn can always read and write EVERYTHING!
 #
-olcAccess: to attrs=userPassword
+olcAccess: to * attrs=userPassword
   by self write
   by anonymous auth
   by users none
   by * none
 
-olcAccess: to attrs=mail
-  by self write
-  by users read
-  by * none
+#olcAccess: to * attrs=mail
+#  by self write
+#  by users read
+#  by * none
 
-olcAccess: to attrs=shadowLastChange
-  by self read
-  by users read
-  by * none
-
+#olcAccess: to * attrs=shadowLastChange
+#  by self read
+#  by users read
+#  by * none
+#
 #
 # Configuration database
 #
@@ -158,7 +158,7 @@ dn: olcDatabase=monitor,cn=config
 objectClass: olcDatabaseConfig
 olcDatabase: monitor
 olcAccess: to * by dn.base="gidNumber=0+uidNumber=0,cn=peercred,cn=external,c
- n=auth" read by dn.base="cn=manager,dc=robot_club,dc=GNCT" read by * none
+ n=auth" read by dn.base="cn=Manager,dc=my-domain,dc=com" read by * none
 
 #
 # Backend database definitions

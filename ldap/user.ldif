@@ -4,8 +4,9 @@
 dn: uid=taku.kouketsu,ou=electronics,dc=robot_club,dc=GNCT
 objectClass: shadowAccount
 objectClass: posixAccount
-objectClass: account
-cn: Taku Kouketsu
+objectClass: inetOrgPerson
+sn: Kouketsu
+cn: Taku 
 uid: taku.kouketsu
 uidNumber: 2001
 gidNumber: 2000
@@ -14,27 +15,27 @@ loginShell: /bin/bash
 userPassword: {SSHA}eui2TDim24XymdkBTAB272LtMGgBunzv
 
 
-dn: uid=fumiya.tsukahara,ou=electronics,dc=robot_club,dc=GNCT
-objectClass: shadowAccount
-objectClass: posixAccount
-objectClass: account
-cn: fumiya.tsukahara
-uid: fumiya.tsukahara
-uidNumber: 2001
-gidNumber: 2000
-homeDirectory: /home/taku
-loginShell: /bin/bash
-userPassword: {SSHA}eui2TDim24XymdkBTAB272LtMGgBunzv
-
-dn: uid=hiromasa.horie,ou=electronics,dc=robot_club,dc=GNCT
-objectClass: shadowAccount
-objectClass: posixAccount
-objectClass: account
-cn: hiromasa.horie
-uid: hiromasa.horie
-uidNumber: 2001
-gidNumber: 2000
-homeDirectory: /home/taku
-loginShell: /bin/bash
-userPassword: {SSHA}eui2TDim24XymdkBTAB272LtMGgBunzv
-
+# dn: uid=fumiya.tsukahara,ou=electronics,dc=robot_club,dc=GNCT
+# objectClass: shadowAccount
+# objectClass: posixAccount
+# objectClass: account
+# cn: fumiya.tsukahara
+# uid: fumiya.tsukahara
+# uidNumber: 2001
+# gidNumber: 2000
+# homeDirectory: /home/taku
+# loginShell: /bin/bash
+# userPassword: {SSHA}eui2TDim24XymdkBTAB272LtMGgBunzv
+# 
+# dn: uid=hiromasa.horie,ou=electronics,dc=robot_club,dc=GNCT
+# objectClass: shadowAccount
+# objectClass: posixAccount
+# objectClass: account
+# cn: hiromasa.horie
+# uid: hiromasa.horie
+# uidNumber: 2001
+# gidNumber: 2000
+# homeDirectory: /home/taku
+# loginShell: /bin/bash
+# userPassword: {SSHA}eui2TDim24XymdkBTAB272LtMGgBunzv
+# 
