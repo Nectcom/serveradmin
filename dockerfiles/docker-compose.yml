@@ -1,0 +1,17 @@
+httpd:
+    build: ./httpd
+    ports:
+        - "8000:80"
+    links:
+        - db
+    volumes:
+        - ../html:/webroot
+
+db:
+    image: nect/mariadb
+    ports:
+        - "3306:3306"
+    volumes_from:
+        - mariadb-data
+    environment:
+        MYSQL_ROOT_PASSWORD: develop
