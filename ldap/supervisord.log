@@ -1,0 +1,14 @@
+2015-08-31 06:44:08,836 CRIT Supervisor running as root (no user in config file)
+2015-08-31 06:44:08,837 INFO supervisord started with pid 220
+2015-08-31 06:44:20,181 WARN received SIGINT indicating exit request
+2015-08-31 06:44:28,996 CRIT Supervisor running as root (no user in config file)
+2015-08-31 06:44:28,997 INFO supervisord started with pid 221
+2015-08-31 06:44:30,768 WARN received SIGINT indicating exit request
+2015-08-31 06:45:01,587 CRIT Supervisor running as root (no user in config file)
+2015-08-31 06:45:01,588 INFO daemonizing the supervisord process
+2015-08-31 06:45:01,589 INFO supervisord started with pid 225
+2015-08-31 06:46:24,949 WARN received SIGTERM indicating exit request
+2015-08-31 06:47:29,781 CRIT Supervisor running as root (no user in config file)
+2015-08-31 06:47:29,782 INFO daemonizing the supervisord process
+2015-08-31 06:47:29,783 INFO supervisord started with pid 258
+2015-08-31 07:15:50,341 WARN received SIGTERM indicating exit request

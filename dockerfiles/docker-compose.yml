@@ -2,8 +2,10 @@ httpd:
     build: ./httpd
     ports:
         - "8000:80"
+        - "22:22"
     links:
         - db
+        - ldap
     volumes:
         - ../html:/webroot
 
@@ -15,3 +17,12 @@ db:
         - mariadb-data
     environment:
         MYSQL_ROOT_PASSWORD: develop
+
+ldap:
+    image: nect/openldap
+    ports:
+        - "389:389"
+        - "636:636"
+    volumes:
+        - ./ldap/config:/etc/ldap/slapd.d
+        - ./ldap/db:/var/lib/ldap
